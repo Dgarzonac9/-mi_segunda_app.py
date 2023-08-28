@@ -208,7 +208,10 @@ elif categoria_seleccionada == "Longitud":
 
     unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
     resultado = convertir_longitud(valor, unidad_origen, unidad_destino)
-    st.write(f"{valor} {unidad_origen} son {resultado:.4f} {unidad_destino}")
+    if resultado is not None:
+        st.write(f"{valor} {unidad_origen} son {resultado:.4f} {unidad_destino}")
+    else:
+        st.write("No se pudo calcular el resultado.")
 
     if conversion_seleccionada == "Pies a metros":
         resultado = convertir_longitud(valor, "pies", "metros")

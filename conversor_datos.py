@@ -8,7 +8,7 @@ def convertir_temperatura(valor, escala_origen, escala_destino):
         elif escala_destino == "Kelvin":
             resultado = valor + 273.15
             return resultado
-
+    
     elif escala_origen == "Fahrenheit":
         if escala_destino == "Celsius":
             resultado = (valor - 32) * 5/9

@@ -29,40 +29,139 @@ def convertir_temperatura(valor, escala_origen, escala_destino):
     pass
 
 def convertir_longitud(valor, unidad_origen, unidad_destino):
-    # Implementa las conversiones de longitud aquí
-    pass
+    if unidad_origen == "Pies" and unidad_destino == "Metros":
+        resultado = valor * 0.3048
+        return resultado
+    elif unidad_origen == "Metros" and unidad_destino == "Pies":
+        resultado = valor / 0.3048
+        return resultado
+    elif unidad_origen == "Pulgadas" and unidad_destino == "Centímetros":
+        resultado = valor * 2.54
+        return resultado
+    elif unidad_origen == "Centímetros" and unidad_destino == "Pulgadas":
+        resultado = valor / 2.54
+        return resultado
+
 
 def convertir_peso(valor, unidad_origen, unidad_destino):
-    # Implementa las conversiones de peso aquí
-    pass
+    if unidad_origen == "Libras" and unidad_destino == "Kilogramos":
+        resultado = valor * 0.453592
+        return resultado
+    elif unidad_origen == "Kilogramos" and unidad_destino == "Libras":
+        resultado = valor / 0.453592
+        return resultado
+    elif unidad_origen == "Onzas" and unidad_destino == "Gramos":
+        resultado = valor * 28.3495
+        return resultado
+    elif unidad_origen == "Gramos" and unidad_destino == "Onzas":
+        resultado = valor / 28.3495
+        return resultado
+
 
 def convertir_volumen(valor, unidad_origen, unidad_destino):
-    # Implementa las conversiones de volumen aquí
-    pass
+    if unidad_origen == "Galones" and unidad_destino == "Litros":
+        resultado = valor * 3.78541
+        return resultado
+    elif unidad_origen == "Litros" and unidad_destino == "Galones":
+        resultado = valor / 3.78541
+        return resultado
+    elif unidad_origen == "Pulgadas cúbicas" and unidad_destino == "Centímetros cúbicos":
+        resultado = valor * 16.3871
+        return resultado
+    elif unidad_origen == "Centímetros cúbicos" and unidad_destino == "Pulgadas cúbicas":
+        resultado = valor / 16.3871
+        return resultado
+
 
 def convertir_tiempo(valor, unidad_origen, unidad_destino):
-    # Implementa las conversiones de tiempo aquí
-    pass
+    if unidad_origen == "Horas" and unidad_destino == "Minutos":
+        resultado = valor * 60
+        return resultado
+    elif unidad_origen == "Minutos" and unidad_destino == "Segundos":
+        resultado = valor * 60
+        return resultado
+    elif unidad_origen == "Días" and unidad_destino == "Horas":
+        resultado = valor * 24
+        return resultado
+    elif unidad_origen == "Semanas" and unidad_destino == "Días":
+        resultado = valor * 7
+        return resultado
+
 
 def convertir_velocidad(valor, unidad_origen, unidad_destino):
-    # Implementa las conversiones de velocidad aquí
-    pass
+    if unidad_origen == "Millas por hora" and unidad_destino == "Kilómetros por hora":
+        resultado = valor * 1.60934
+        return resultado
+    elif unidad_origen == "Kilómetros por hora" and unidad_destino == "Metros por segundo":
+        resultado = valor * 0.277778
+        return resultado
+    elif unidad_origen == "Nudos" and unidad_destino == "Millas por hora":
+        resultado = valor * 1.15078
+        return resultado
+    elif unidad_origen == "Metros por segundo" and unidad_destino == "Pies por segundo":
+        resultado = valor * 3.28084
+        return resultado
+
 
 def convertir_area(valor, unidad_origen, unidad_destino):
-    # Implementa las conversiones de área aquí
-    pass
+    if unidad_origen == "Metros cuadrados" and unidad_destino == "Pies cuadrados":
+        resultado = valor * 10.7639
+        return resultado
+    elif unidad_origen == "Pies cuadrados" and unidad_destino == "Metros cuadrados":
+        resultado = valor * 0.092903
+        return resultado
+    elif unidad_origen == "Kilómetros cuadrados" and unidad_destino == "Millas cuadradas":
+        resultado = valor * 0.386102
+        return resultado
+    elif unidad_origen == "Millas cuadradas" and unidad_destino == "Kilómetros cuadrados":
+        resultado = valor * 2.58999
+        return resultado
+
 
 def convertir_energia(valor, unidad_origen, unidad_destino):
-    # Implementa las conversiones de energía aquí
-    pass
+    if unidad_origen == "Julios" and unidad_destino == "Calorías":
+        resultado = valor * 0.239006
+        return resultado
+    elif unidad_origen == "Calorías" and unidad_destino == "Kilojulios":
+        resultado = valor * 0.004184
+        return resultado
+    elif unidad_origen == "Kilovatios-hora" and unidad_destino == "Megajulios":
+        resultado = valor * 3.6
+        return resultado
+    elif unidad_origen == "Megajulios" and unidad_destino == "Kilovatios-hora":
+        resultado = valor * 0.277778
+        return resultado
+
 
 def convertir_presion(valor, unidad_origen, unidad_destino):
-    # Implementa las conversiones de presión aquí
-    pass
+    if unidad_origen == "Pascales" and unidad_destino == "Atmósferas":
+        resultado = valor * 9.86923e-6
+        return resultado
+    elif unidad_origen == "Atmósferas" and unidad_destino == "Pascales":
+        resultado = valor * 101325
+        return resultado
+    elif unidad_origen == "Barras" and unidad_destino == "Libras por pulgada cuadrada":
+        resultado = valor * 14.5038
+        return resultado
+    elif unidad_origen == "Libras por pulgada cuadrada" and unidad_destino == "Bares":
+        resultado = valor * 0.0689476
+        return resultado
+
 
 def convertir_tamano_datos(valor, unidad_origen, unidad_destino):
-    # Implementa las conversiones de tamaño de datos aquí
-    pass
+    if unidad_origen == "Megabytes" and unidad_destino == "Gigabytes":
+        resultado = valor * 0.001
+        return resultado
+    elif unidad_origen == "Gigabytes" and unidad_destino == "Terabytes":
+        resultado = valor * 0.001
+        return resultado
+    elif unidad_origen == "Kilobytes" and unidad_destino == "Megabytes":
+        resultado = valor * 0.001
+        return resultado
+    elif unidad_origen == "Terabytes" and unidad_destino == "Petabytes":
+        resultado = valor * 0.001
+        return resultado
+
 # Título de la app
 st.title("Conversor Universal")
 
@@ -107,6 +206,10 @@ elif categoria_seleccionada == "Longitud":
     conversiones_longitud = ["Pies a metros", "Metros a pies", "Pulgadas a centímetros", "Centímetros a pulgadas"]
     conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_longitud)
     valor = st.number_input("Ingresa el valor", value=0.0)
+
+    unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
+    resultado = convertir_longitud(valor, unidad_origen, unidad_destino)
+    st.write(f"{valor} {unidad_origen} son {resultado:.4f} {unidad_destino}")
 
     if conversion_seleccionada == "Pies a metros":
         resultado = convertir_longitud(valor, "pies", "metros")

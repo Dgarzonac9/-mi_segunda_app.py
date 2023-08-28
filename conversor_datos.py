@@ -1,7 +1,6 @@
 import streamlit as st
 
 def convertir_temperatura(valor, escala_origen, escala_destino):
-    def convertir_temperatura(valor, escala_origen, escala_destino):
     if escala_origen == "Celsius":
         if escala_destino == "Fahrenheit":
             resultado = (valor * 9/5) + 32

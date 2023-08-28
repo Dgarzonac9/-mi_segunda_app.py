@@ -200,14 +200,17 @@ if categoria_seleccionada == "Temperatura":
 
     pass
 
+
 elif categoria_seleccionada == "Longitud":
-    # Conversión de longitud
     conversiones_longitud = ["Pies a metros", "Metros a pies", "Pulgadas a centímetros", "Centímetros a pulgadas"]
     conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_longitud)
     valor = st.number_input("Ingresa el valor", value=0.0)
 
     unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
     resultado = convertir_longitud(valor, unidad_origen, unidad_destino)
+    st.write(f"{valor} {unidad_origen} son {resultado:.4f} {unidad_destino}")
+
+
     if resultado is not None:
         st.write(f"{valor} {unidad_origen} son {resultado:.4f} {unidad_destino}")
     else:
@@ -232,10 +235,14 @@ elif categoria_seleccionada == "Longitud":
     pass
 
 elif categoria_seleccionada == "Peso/Masa":
-    # Conversión de peso/masa
     conversiones_peso = ["Libras a kilogramos", "Kilogramos a libras", "Onzas a gramos", "Gramos a onzas"]
     conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_peso)
     valor = st.number_input("Ingresa el valor", value=0.0)
+
+    unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
+    resultado = convertir_peso(valor, unidad_origen, unidad_destino)
+    st.write(f"{valor} {unidad_origen} son {resultado:.4f} {unidad_destino}")
+
 
     if conversion_seleccionada == "Libras a kilogramos":
         resultado = convertir_peso(valor, "libras", "kilogramos")
@@ -256,10 +263,14 @@ elif categoria_seleccionada == "Peso/Masa":
     pass
 
 elif categoria_seleccionada == "Volumen":
-    # Conversión de volumen
     conversiones_volumen = ["Galones a litros", "Litros a galones", "Pulgadas cúbicas a centímetros cúbicos", "Centímetros cúbicos a pulgadas cúbicas"]
     conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_volumen)
     valor = st.number_input("Ingresa el valor", value=0.0)
+
+    unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
+    resultado = convertir_volumen(valor, unidad_origen, unidad_destino)
+    st.write(f"{valor} {unidad_origen} son {resultado:.4f} {unidad_destino}")
+
 
     if conversion_seleccionada == "Galones a litros":
         resultado = convertir_volumen(valor, "galones", "litros")
@@ -280,10 +291,14 @@ elif categoria_seleccionada == "Volumen":
     pass
 
 elif categoria_seleccionada == "Tiempo":
-    # Conversión de tiempo
     conversiones_tiempo = ["Horas a minutos", "Minutos a segundos", "Días a horas", "Semanas a días"]
     conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_tiempo)
     valor = st.number_input("Ingresa el valor", value=0.0)
+
+    unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
+    resultado = convertir_tiempo(valor, unidad_origen, unidad_destino)
+    st.write(f"{valor} {unidad_origen} son {resultado:.4f} {unidad_destino}")
+
 
     if conversion_seleccionada == "Horas a minutos":
         resultado = valor * 60
@@ -304,10 +319,14 @@ elif categoria_seleccionada == "Tiempo":
     pass
 
 elif categoria_seleccionada == "Velocidad":
-    # Conversión de velocidad
     conversiones_velocidad = ["Millas por hora a kilómetros por hora", "Kilómetros por hora a metros por segundo", "Nudos a millas por hora", "Metros por segundo a pies por segundo"]
     conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_velocidad)
     valor = st.number_input("Ingresa el valor", value=0.0)
+
+    unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
+    resultado = convertir_velocidad(valor, unidad_origen, unidad_destino)
+    st.write(f"{valor} {unidad_origen} son {resultado:.4f} {unidad_destino}")
+
 
     if conversion_seleccionada == "Millas por hora a kilómetros por hora":
         resultado = valor * 1.60934
@@ -327,11 +346,15 @@ elif categoria_seleccionada == "Velocidad":
 
     pass
 
-elif categoria_seleccionada == "Área":
-    # Conversión de área
-    conversiones_area = ["Metros cuadrados a pies cuadrados", "Pies cuadrados a metros cuadrados", "Kilómetros cuadrados a millas cuadradas", "Millas cuadradas a kilómetros cuadrados"]
-    conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_area)
+elif categoria_seleccionada == "Velocidad":
+    conversiones_velocidad = ["Millas por hora a kilómetros por hora", "Kilómetros por hora a metros por segundo", "Nudos a millas por hora", "Metros por segundo a pies por segundo"]
+    conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_velocidad)
     valor = st.number_input("Ingresa el valor", value=0.0)
+
+    unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
+    resultado = convertir_velocidad(valor, unidad_origen, unidad_destino)
+    st.write(f"{valor} {unidad_origen} son {resultado:.4f} {unidad_destino}")
+
 
     if conversion_seleccionada == "Metros cuadrados a pies cuadrados":
         resultado = valor * 10.7639
@@ -356,6 +379,11 @@ elif categoria_seleccionada == "Energía":
     conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_energia)
     valor = st.number_input("Ingresa el valor", value=0.0)
 
+    unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
+    resultado = convertir_energia(valor, unidad_origen, unidad_destino)
+    st.write(f"{valor} {unidad_origen} son {resultado:.4f} {unidad_destino}")
+
+
     if conversion_seleccionada == "Julios a calorías":
         resultado = valor * 0.239006
         st.write(f"{valor} julios son {resultado:.4f} calorías")
@@ -375,10 +403,14 @@ elif categoria_seleccionada == "Energía":
     pass
 
 elif categoria_seleccionada == "Presión":
-    # Conversión de presión:
     conversiones_presion = ["Pascales a atmósferas", "Atmósferas a pascales", "Barras a libras por pulgada cuadrada", "Libras por pulgada cuadrada a bares"]
     conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_presion)
     valor = st.number_input("Ingresa el valor", value=0.0)
+
+    unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
+    resultado = convertir_presion(valor, unidad_origen, unidad_destino)
+    st.write(f"{valor} {unidad_origen} son {resultado:.4f} {unidad_destino}")
+
 
     if conversion_seleccionada == "Pascales a atmósferas":
         resultado = valor * 9.86923e-6
@@ -399,10 +431,14 @@ elif categoria_seleccionada == "Presión":
     pass
 
 elif categoria_seleccionada == "Tamaño de Datos":
-    # Conversión de tamaño de datos
-    conversiones_datos = ["Megabytes a gigabytes", "Gigabytes a terabytes", "Kilobytes a megabytes", "Terabytes a petabytes"]
-    conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_datos)
+    conversiones_tamano_datos = ["Megabytes a gigabytes", "Gigabytes a terabytes", "Kilobytes a megabytes", "Terabytes a petabytes"]
+    conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_tamano_datos)
     valor = st.number_input("Ingresa el valor", value=0.0)
+
+    unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
+    resultado = convertir_tamano_datos(valor, unidad_origen, unidad_destino)
+    st.write(f"{valor} {unidad_origen} son {resultado:.6f} {unidad_destino}")
+
 
     if conversion_seleccionada == "Megabytes a gigabytes":
         resultado = valor * 0.001

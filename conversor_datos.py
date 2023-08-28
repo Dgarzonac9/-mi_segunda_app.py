@@ -61,7 +61,6 @@ elif categoria_seleccionada == "Longitud":
 
 elif categoria_seleccionada == "Peso/Masa":
     # Conversión de peso/masa
-elif categoria == "Peso":
     conversiones_peso = ["Libras a kilogramos", "Kilogramos a libras", "Onzas a gramos", "Gramos a onzas"]
     conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_peso)
     valor = st.number_input("Ingresa el valor", value=0.0)
@@ -204,8 +203,7 @@ elif categoria_seleccionada == "Energía":
     pass
 
 elif categoria_seleccionada == "Presión":
-    # Conversión de presión
-elif categoria == "Presión":
+    # Conversión de presión:
     conversiones_presion = ["Pascales a atmósferas", "Atmósferas a pascales", "Barras a libras por pulgada cuadrada", "Libras por pulgada cuadrada a bares"]
     conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_presion)
     valor = st.number_input("Ingresa el valor", value=0.0)

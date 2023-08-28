@@ -1,5 +1,68 @@
 import streamlit as st
 
+def convertir_temperatura(valor, escala_origen, escala_destino):
+    def convertir_temperatura(valor, escala_origen, escala_destino):
+    if escala_origen == "Celsius":
+        if escala_destino == "Fahrenheit":
+            resultado = (valor * 9/5) + 32
+            return resultado
+        elif escala_destino == "Kelvin":
+            resultado = valor + 273.15
+            return resultado
+
+    elif escala_origen == "Fahrenheit":
+        if escala_destino == "Celsius":
+            resultado = (valor - 32) * 5/9
+            return resultado
+        elif escala_destino == "Kelvin":
+            resultado = (valor + 459.67) * 5/9
+            return resultado
+
+    elif escala_origen == "Kelvin":
+        if escala_destino == "Celsius":
+            resultado = valor - 273.15
+            return resultado
+        elif escala_destino == "Fahrenheit":
+            resultado = (valor * 9/5) - 459.67
+            return resultado
+
+    pass
+
+def convertir_longitud(valor, unidad_origen, unidad_destino):
+    # Implementa las conversiones de longitud aquí
+    pass
+
+def convertir_peso(valor, unidad_origen, unidad_destino):
+    # Implementa las conversiones de peso aquí
+    pass
+
+def convertir_volumen(valor, unidad_origen, unidad_destino):
+    # Implementa las conversiones de volumen aquí
+    pass
+
+def convertir_tiempo(valor, unidad_origen, unidad_destino):
+    # Implementa las conversiones de tiempo aquí
+    pass
+
+def convertir_velocidad(valor, unidad_origen, unidad_destino):
+    # Implementa las conversiones de velocidad aquí
+    pass
+
+def convertir_area(valor, unidad_origen, unidad_destino):
+    # Implementa las conversiones de área aquí
+    pass
+
+def convertir_energia(valor, unidad_origen, unidad_destino):
+    # Implementa las conversiones de energía aquí
+    pass
+
+def convertir_presion(valor, unidad_origen, unidad_destino):
+    # Implementa las conversiones de presión aquí
+    pass
+
+def convertir_tamano_datos(valor, unidad_origen, unidad_destino):
+    # Implementa las conversiones de tamaño de datos aquí
+    pass
 # Título de la app
 st.title("Conversor Universal")
 
@@ -16,6 +79,10 @@ if categoria_seleccionada == "Temperatura":
     conversiones_temperatura = ["Celsius a Fahrenheit", "Fahrenheit a Celsius", "Celsius a Kelvin", "Kelvin a Celsius"]
     conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_temperatura)
     valor = st.number_input("Ingresa el valor", value=0.0)
+
+    escala_origen, escala_destino = conversion_seleccionada.split(" a ")
+    resultado = convertir_temperatura(valor, escala_origen, escala_destino)
+    st.write(f"{valor} {escala_origen} son {resultado:.2f} {escala_destino}")
 
     if conversion_seleccionada == "Celsius a Fahrenheit":
         resultado = convertir_temperatura(valor, "Celsius", "Fahrenheit")

@@ -27,7 +27,7 @@ def convertir_temperatura(valor, escala_origen, escala_destino):
 
     pass
 
-def convertir_longitud(valor, unidad_origen, unidad_destino):
+def convertir_longitud(valor, escala_origen, escala_destino):
     if unidad_origen == "Pies" and unidad_destino == "Metros":
         resultado = valor * 0.3048
         return resultado

@@ -207,7 +207,7 @@ elif categoria_seleccionada == "Longitud":
     valor = st.number_input("Ingresa el valor", value=0.0)
 
     unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
-    resultado = convertir_longitud(valor, unidad_origen, unidad_destino)
+    resultado = convertir_longitud(valor, escala_origen, escala_destino)
     st.write(f"{valor} {unidad_origen} son {resultado:.2f} {unidad_destino}")
 
     if conversion_seleccionada == "Pies a metros":

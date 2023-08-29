@@ -27,7 +27,7 @@ def convertir_temperatura(valor, escala_origen, escala_destino):
 
     pass
 
-def convertir_longitud(valor, escala_origen, escala_destino):
+def convertir_longitud(valor, unidad_origen, unidad_destino):
     if unidad_origen == "Pies" and unidad_destino == "Metros":
         resultado = valor * 0.3048
         return resultado
@@ -206,8 +206,8 @@ elif categoria_seleccionada == "Longitud":
     conversion_seleccionada = st.sidebar.selectbox("Tipo de conversión", conversiones_longitud)
     valor = st.number_input("Ingresa el valor", value=0.0)
 
-    escala_origen, escala_destino = conversion_seleccionada.split(" a ")
-    resultado = convertir_longitud(valor, escala_origen, escala_destino)
+    unidad_origen, unidad_destino = conversion_seleccionada.split(" a ")
+    resultado = convertir_longitud(valor, unidad_origen, unidad_destino)
     st.write(f"{valor} {unidad_origen} son {resultado:.2f} {unidad_destino}")
 
     if conversion_seleccionada == "Pies a metros":
